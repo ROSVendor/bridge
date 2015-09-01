@@ -2,6 +2,8 @@
 #define BRIDGE_LANGUAGE_H
 
 #include <include/entity.h>
+#include <include/typesystem.h>
+
 /**
  * 定义语言族系
  * 注意：这不是具体语言，只是定义了语言的族系
@@ -46,8 +48,12 @@ enum LanguageRuntime {
     CUSTOM_RUNTIME, // 其他需要解释器或者虚拟机运行的语言，如CLisp
 };
 
+typedef void* (*cast_foreign_func)(CValue*);
+typedef CValue* (*cast_native_func)();
+
 typedef struct {
     DERIVING_NAMED;
+
 } Runtime;
 
 
