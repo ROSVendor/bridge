@@ -3,6 +3,7 @@
  * 仅仅是对默认实现的一层封装
  */
 
+#include <include/module.h>
 #include <include/error.h>
 #include <include/_error.h>
 
@@ -16,6 +17,5 @@ static const ModError module = {
     .reset        = _bridge_error_reset
 };
 
-const ModError * get_mod() {
-    return &module;
-}
+MODULE_ENTITY(ModError, module);
+
