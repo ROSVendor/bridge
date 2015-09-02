@@ -6,4 +6,5 @@ include_directories(.)
 
 add_library(libbridge SHARED lib/bridge.c lib/_error.c lib/_memory.c)
 add_library(libbridgeerror SHARED lib/error.c lib/_error.c)
+add_library(libbridgemem   SHARED lib/memory.c lib/_memory.c)
 
