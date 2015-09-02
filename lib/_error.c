@@ -14,9 +14,16 @@ char            info[MAX_ERROR_INFO_LEN]  = {};
 enum ErrorState state                     = NORMAL;
 
 
-void _bridge_fatal(const char * reason) {
+
+void inline _bridge_error_fatal_pos(const char * pos, const char *reason) {
+    char * ret;
+    asprintf(&ret, "[%s] %s", pos, reason);
+    _bridge_error_fatal(ret);
+}
+
+void _bridge_error_fatal(const char *reason) {
     if (reason) {
-        fprintf(stderr, "[FATAL]: ");
+        fprintf(stderr, "[FATAL]");
         perror(reason);
     } else {
         perror("Unspecified fatal error");
