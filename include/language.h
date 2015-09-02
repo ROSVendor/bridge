@@ -13,7 +13,7 @@
  * 要处理Hack之类的类型系统被重新实现的语言，请使用对应类型系统的族系
  */
 enum LanguageFamily {
-    C,
+    C = 0,
     CPP,
     HASKELL,
     ERLANG,
@@ -25,6 +25,7 @@ enum LanguageFamily {
     ROCKET,
     GO,
     JAVA,
+    FAMILY_COUNT,
     CUSTOM_FAMILY
 };
 
@@ -36,7 +37,7 @@ typedef struct {
  * 语言的运行时环境
  */
 enum LanguageRuntime {
-    NATIVE,         // 编译成本地代码
+    NATIVE = 0,     // 编译成本地代码
     RTS,            // Haskell's RunTime System
     BEAM,           // Erlang's beam VM
     PVM,            // Python VM
@@ -45,6 +46,7 @@ enum LanguageRuntime {
     PARROT,         // Parrot VM
     OPEN_JVM,       // OpenJDKd JVM
     ORACLE_JVM,     // Oracle's JVM
+    RUNTIME_COUNT,  // 统计内置运行时环境的数量
     CUSTOM_RUNTIME, // 其他需要解释器或者虚拟机运行的语言，如CLisp
 };
 
