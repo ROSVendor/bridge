@@ -5,11 +5,14 @@
 #ifndef BRIDGE_ERROR_H
 #define BRIDGE_ERROR_H
 
-#include <include/entity.h>
+#include <include/module.h>
 
 enum ErrorState {
-    NORMAL,
-    MOD_LOAD_FIALURE
+    ES_NORMAL = 0,
+    ES_MOD_LOAD_FIALURE,
+    ES_IO_FIALURE,
+    ES_FOUNDATION_FIALURE, // 基础设施错误
+    ES_COUNT
 };
 
 typedef struct {
@@ -22,5 +25,4 @@ typedef struct {
     void            (*reset)();
 } ModError;
 
-const ModError * get_mod();
 #endif //BRIDGE_ERROR_H

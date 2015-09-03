@@ -55,13 +55,6 @@ typedef CValue* (*cast_native_func)();
 
 typedef struct {
     DERIVING_NAMED;
-
 } Runtime;
-
-
-typedef struct {
-    enum LanguageFamily  native;
-    enum LanguageRuntime runtime;
-} Bridge;
 
 #endif //BRIDGE_LANGUAGE_H
