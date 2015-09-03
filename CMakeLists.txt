@@ -25,9 +25,16 @@ target_link_libraries(bridgememory bridgedefault)
 add_library(bridgelogger  SHARED lib/logger.c)
 target_link_libraries(bridgelogger bridgedefault)
 
+# Bridge.IO
+add_library(bridgeio SHARED lib/io.c)
+target_link_libraries(bridgeio bridgedefault)
+
 
 add_executable(test.main test/main.c)
 target_link_libraries(test.main bridge)
 
 add_executable(test.io test/io.c)
 target_link_libraries(test.io bridge)
+
+add_executable(test.logger test/logger.c)
+target_link_libraries(test.logger bridge)
