@@ -5,7 +5,7 @@
 #ifndef BRIDGE_MACRO_H
 #define BRIDGE_MACRO_H
 
-#define nameof(x) (#x)
+#define literalof(x) (#x)
 #define ret_state enum ErrorState
 
 #endif //BRIDGE_MACRO_H
