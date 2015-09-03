@@ -7,10 +7,14 @@
 #include <include/memory.h>
 #include <include/_memory.h>
 
-static ModMemory module = {
-    .name  = "Bridge.Memory",
+MODULE_NAME("Bridge.Memory");
+MODULE_ENTITY(ModMemory, module) = {
     .alloc = _bridge_memory_alloc,
     .free  = _bridge_memory_free
 };
 
-MODULE_ENTITY(ModMemory, module);
+
+ret_state get_entity(void ** addrp) {
+    *addrp = &module;
+    return ES_NORMAL;
+}

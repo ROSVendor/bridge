@@ -13,11 +13,11 @@ ret_state _bridge_memory_alloc(size_t size, void ** p) {
     } else {
         *p = addr;
     }
-    return NORMAL;
+    return ES_NORMAL;
 }
 ret_state _bridge_memory_free(void *p) {
     free(p);
-    return NORMAL;
+    return ES_NORMAL;
 }
 
 

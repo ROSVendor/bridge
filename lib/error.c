@@ -7,8 +7,8 @@
 #include <include/error.h>
 #include <include/_error.h>
 
-static const ModError module = {
-    .name         = "Bridge.Error",
+MODULE_NAME("Bridge.Error");
+MODULE_ENTITY(ModError, module) = {
     .latest_state = _bridge_error_latest_state,
     .latest_info  = _bridge_error_latest_info,
     .set_error    = _bridge_error_set_error,
@@ -17,5 +17,7 @@ static const ModError module = {
     .reset        = _bridge_error_reset
 };
 
-MODULE_ENTITY(ModError, module);
-
+ret_state get_entity(void ** addrp) {
+    *addrp = &module;
+    return ES_NORMAL;
+}

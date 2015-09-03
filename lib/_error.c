@@ -11,9 +11,7 @@
 #include <include/_error.h>
 
 char            info[MAX_ERROR_INFO_LEN]  = {};
-enum ErrorState state                     = NORMAL;
-
-
+enum ErrorState state                     = ES_NORMAL;
 
 void inline _bridge_error_fatal_pos(const char * pos, const char *reason) {
     char * ret;
@@ -41,7 +39,7 @@ const char * _bridge_error_latest_info() {
 
 void _bridge_error_reset() {
     info[0] = '\0';
-    state   = NORMAL;
+    state   = ES_NORMAL;
 }
 
 void _bridge_error_set_state(enum ErrorState s) {
