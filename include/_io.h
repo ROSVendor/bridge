@@ -6,15 +6,16 @@
 #define BRIDGE__IO_H
 
 #include <stddef.h>
+#include <unistd.h>
 #include <include/error.h>
 #include <include/macro.h>
 
 ret_state _bridge_io_open (int *, const char *, int flag, ...);
-ret_state _bridge_io_write(int, void *, size_t);
+ret_state _bridge_io_write(int, const void *, size_t);
 ret_state _bridge_io_read (int, void *, size_t);
 ret_state _bridge_io_close(int);
-size_t    _bridge_io_raw_read (int, void *, size_t);
-size_t    _bridge_io_raw_write(int, void *, size_t);
+ssize_t   _bridge_io_raw_read (int, void *, size_t);
+ssize_t   _bridge_io_raw_write(int, const void *, size_t);
 int       _bridge_io_raw_open (const char *, int flag, ...);
 int       _bridge_io_raw_close(int);
 
