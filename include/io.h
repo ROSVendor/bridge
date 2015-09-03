@@ -7,7 +7,7 @@
 #define BRIDGE_IO_H
 
 #include <stddef.h>
-#include <sys/_types/_ssize_t.h>
+#include <unistd.h>
 #include <include/error.h>
 #include <include/macro.h>
 

@@ -13,7 +13,7 @@
 #include <include/error.h>
 #include <include/macro.h>
 #include <include/module.h>
-#include <include/modloadr.h>
+#include <include/modloader.h>
 
 typedef struct {
     DERIVING_NAMED;
