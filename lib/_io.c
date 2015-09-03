@@ -42,11 +42,11 @@ ret_state _bridge_io_close(int fd) {
     }
 }
 
-#define CHUNCKED_IO(func, fd, buffer, count) \
+#define CHUNK_IO(func, fd, buffer, count) \
     ssize_t chunk_size = 0; \
     ssize_t offset     = 0; \
     do { \
-        chunk_size = write(fd, buffer + offset, count - offset); \
+        chunk_size = func(fd, buffer + offset, count - offset); \
         if (!chunk_size) { \
             _bridge_error_set_error(ES_IO_FIALURE, __func__); \
             return ES_IO_FIALURE; \
@@ -56,10 +56,10 @@ ret_state _bridge_io_close(int fd) {
     return ES_NORMAL
 
 ret_state _bridge_io_read(int fd, void * dest, size_t count) {
-    CHUNCKED_IO(read, fd, dest, count);
+    CHUNK_IO(read, fd, dest, count);
 }
 
 ret_state _bridge_io_write(int fd, const void * data, size_t count) {
-    CHUNCKED_IO(write, fd, data, count);
+    CHUNK_IO(write, fd, data, count);
 }
-#undef CHUNCKED_IO
+#undef CHUNK_IO
