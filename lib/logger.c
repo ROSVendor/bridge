@@ -16,4 +16,5 @@ MODULE_ENTITY(ModLogger, module) = {
     .error   = _bridge_logger_error,
     .debug   = _bridge_logger_debug
 };
+MODULE_ENTITY_GETTER(module);
 

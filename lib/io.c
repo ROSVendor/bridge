@@ -19,9 +19,4 @@ MODULE_ENTITY(ModIO, module) = {
     .raw_write = write,
     .raw_close = close
 };
-
-ret_state get_entity(void ** addrp) {
-        *addrp = &module;
-        return ES_NORMAL;
-}
-
+MODULE_ENTITY_GETTER(module);

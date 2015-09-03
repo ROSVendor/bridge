@@ -12,9 +12,4 @@ MODULE_ENTITY(ModMemory, module) = {
     .alloc = _bridge_memory_alloc,
     .free  = _bridge_memory_free
 };
-
-
-ret_state get_entity(void ** addrp) {
-    *addrp = &module;
-    return ES_NORMAL;
-}
+MODULE_ENTITY_GETTER(module);

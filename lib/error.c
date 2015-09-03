@@ -16,8 +16,5 @@ MODULE_ENTITY(ModError, module) = {
     .set_info     = _bridge_error_set_info,
     .reset        = _bridge_error_reset
 };
+MODULE_ENTITY_GETTER(module);
 
-ret_state get_entity(void ** addrp) {
-    *addrp = &module;
-    return ES_NORMAL;
-}
