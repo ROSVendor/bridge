@@ -32,5 +32,10 @@ ret_state get_entity(void **);
 #define MODULE_ENTITY(type, entity) \
     type SEPSEC("bridge,module") entity
 
+#define MODULE_ENTITY_GETTER(entity) \
+    ret_state get_entity(void ** addrp) { \
+        *addrp = &entity;                 \
+        return ES_NORMAL;                 \
+    } \
 
 #endif //BRIDGE_MODULE_H
