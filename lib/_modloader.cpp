@@ -5,19 +5,16 @@
 #include <dlfcn.h>
 #include <unistd.h>
 #include <string.h>
-#include <stdio.h>
 #include <stdlib.h>
 #include <ctype.h>
 #include <include/_modloader.h>
-#include <include/error.h>
 #include <include/_error.h>
-#include <include/module.h>
 
 #define  DYLIB_NAME_LEN_MAX 4096
 
 static char dyname[DYLIB_NAME_LEN_MAX] = "lib";
 
-static void strmap(char * src, int (fn)(char)) {
+static void strmap(char * src, int (fn)(int)) {
     for (int i = 0; src[i]; ++i) {
         src[i] = (char) fn(src[i]);
     }
