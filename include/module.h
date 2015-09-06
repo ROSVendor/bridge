@@ -9,6 +9,10 @@
 #include <include/error.h>
 #include <include/macro.h>
 
+#ifdef __cplusplus
+extern "C" {
+#endif
+
 enum InnerModuleType {
     MOD_ERROR = 0,
     MOD_MEMORY,
@@ -37,5 +41,9 @@ ret_state get_entity(void **);
         *addrp = &entity;                 \
         return ES_NORMAL;                 \
     } \
+
+#ifdef __cplusplus
+}
+#endif
 
 #endif //BRIDGE_MODULE_H

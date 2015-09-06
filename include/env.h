@@ -6,6 +6,10 @@
 
 #include <include/entity.h>
 
+#ifdef __cplusplus
+extern "C" {
+#endif
+
 /**
  * 定义运行容器
  */
@@ -24,5 +28,9 @@ typedef struct {
 typedef struct {
     Container * container;
 } Env;
+
+#ifdef __cplusplus
+}
+#endif
 
 #endif //BRIDGE_ENV_H

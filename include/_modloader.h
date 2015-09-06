@@ -11,10 +11,14 @@
 // TODO 实现一个ANSI C的版本
 // TODO 添加静态扫描以配置足够的内存空间
 
+#ifdef __cplusplus
 extern "C" {
+#endif
     ret_state _bridge_modloader_require(void **, const char *);
-    ret_state _bridge_modloader_replace(void **, const char *, const char *)
+    ret_state _bridge_modloader_replace(void **, const char *, const char *);
     ret_state _bridge_modloader_remove(const void *);
+#ifdef __cplusplus
 };
+#endif
 
 #endif //BRIDGE__MODLOADER_H

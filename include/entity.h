@@ -8,8 +8,15 @@
 
 #include <include/entity.h>
 
+#ifdef __cplusplus
+extern "C" {
+#endif
+
 #define DERIVING_NAMED const char * name
 #define NAMEOF(entity) (entity->name)
 
+#ifdef __cplusplus
+}
+#endif
 
 #endif //BRIDGE_ENTITY_H

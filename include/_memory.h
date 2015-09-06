@@ -7,7 +7,15 @@
 #include <include/error.h>
 #include <include/macro.h>
 
+#ifdef __cplusplus
+extern "C" {
+#endif
+
 ret_state _bridge_memory_alloc(size_t size, void ** p);
 ret_state _bridge_memory_free(void * p);
+
+#ifdef __cplusplus
+}
+#endif
 
 #endif //BRIDGE_MEMORY_STATIC_H

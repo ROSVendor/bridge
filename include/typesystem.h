@@ -7,13 +7,17 @@
 #include <stdbool.h>
 #include <include/language.h>
 
+#ifdef __cplusplus
+extern "C" {
+#endif
+
 /**
  * 定义基本类型
  */
 enum CBasicType {
     C_VOID,
     C_I8, C_I16, C_I32, C_I64,
-          C_F16, C_F32, C_F64,
+    C_F16, C_F32, C_F64,
     C_VOIDP,
     EXTERN_TYPE
 };
@@ -35,12 +39,16 @@ typedef struct {
     bool is_const, is_signed, is_atom, is_volatile;
     enum CBasicType type;
     enum ExternType extern_type;
-    int  ptr_level; // 0 -> raw data
+    int ptr_level; // 0 -> raw data
 } CType;
 
 typedef struct {
-    CType * type;
-    void  * pointer;
+    CType *type;
+    void *pointer;
 } CValue;
+
+#ifdef __cplusplus
+}
+#endif
 
 #endif //BRIDGE_TYPESYSTEM_H

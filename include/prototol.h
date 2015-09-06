@@ -8,6 +8,10 @@
 #include <include/typesystem.h>
 #include <include/env.h>
 
+#ifdef __cplusplus
+extern "C" {
+#endif
+
 typedef struct {
     int srcc;
     int argc;
@@ -27,4 +31,9 @@ void * foreign_call(Env*, Family*, Runtime*, CallArgs*);
  */
 void   * cast_to_foreign(Family*, Runtime*, CValue *);
 CValue * cast_to_native (Family*, Runtime*, void   *);
+
+#ifdef __cplusplus
+}
+#endif
+
 #endif //BRIDGE_PROTOTOL_H

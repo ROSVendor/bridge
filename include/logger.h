@@ -7,6 +7,10 @@
 
 #include <include/module.h>
 
+#ifdef __cplusplus
+extern "C" {
+#endif
+
 enum LogLevel {
 // using stdout
     LOG_VERBOSE,
@@ -25,5 +29,9 @@ typedef struct {
     ret_state (*error)  (const char *, const char *);
     ret_state (*debug)  (const char *, const char *);
 } ModLogger;
+
+#ifdef __cplusplus
+}
+#endif
 
 #endif //BRIDGE_LOGGER_H

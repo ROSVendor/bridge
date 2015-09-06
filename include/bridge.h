@@ -15,6 +15,10 @@
 #include <include/module.h>
 #include <include/modloader.h>
 
+#ifdef __cplusplus
+extern "C" {
+#endif
+
 typedef struct {
     DERIVING_NAMED;
 } Bridge;
@@ -33,4 +37,9 @@ ret_state bridge_finalize();
  * 获取Bridge系统入口
  */
 ret_state bridge_instance(Bridge * bridge);
+
+#ifdef __cplusplus
+}
+#endif
+
 #endif //BRIDGE_BRIDGE_H

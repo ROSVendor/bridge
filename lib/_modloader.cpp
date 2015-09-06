@@ -37,15 +37,16 @@ static const char * dylib_name(const char * mod_name) {
 }
 
 ret_state _bridge_modloader_require(void ** addrp, const char * name) {
+    typedef ret_state (*getter)(void**);
     const char * dylib_file_name = dylib_name(name);
     void * mod = dlopen(dylib_file_name, RTLD_NOW);
-    free(dylib_file_name);
+    free((void *)dylib_file_name);
     if (mod == NULL) {
         _bridge_error_set_error(ES_MOD_LOAD_FIALURE, "!!!");
         return ES_MOD_LOAD_FIALURE;
     }
-    ret_state (*ge)(void**) = dlsym(mod, "get_entity");
-    ge(addrp);
+    void * ge = dlsym(mod, "get_entity");
+    ((getter)ge)(addrp);
     return ES_NORMAL;
 }
 

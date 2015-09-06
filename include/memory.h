@@ -6,10 +6,18 @@
 
 #include <include/bridge.h>
 
+#ifdef __cplusplus
+extern "C" {
+#endif
+
 typedef struct {
     DERIVING_NAMED;
     ret_state (*alloc)(size_t, void **);
     ret_state (*free)(void *);
 } ModMemory;
+
+#ifdef __cplusplus
+}
+#endif
 
 #endif //BRIDGE_MEMORY_H

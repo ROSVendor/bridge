@@ -5,7 +5,8 @@
 #ifndef BRIDGE_ERROR_H
 #define BRIDGE_ERROR_H
 
-#include <include/module.h>
+#include <include/entity.h>
+#include <include/error.h>
 
 enum ErrorState {
     ES_NORMAL = 0,
