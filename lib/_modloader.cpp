@@ -27,14 +27,15 @@ typedef std::map <std::string, void *> record_t;
 static record_t *entities;
 static record_t * dylibs;
 
-// TODO 准备Linux平台版本
 static std::string *local_dylib_path(const char *mod_name) {
-    std::string * dylib_path = new std::string("lib.dylib");
+    std::string * dylib_path = new std::string("/usr/local/lib/.so");
     std::string s = mod_name;
-    std::transform(s.begin(), s.end(), s.begin(), tolower);
-    std::string::iterator i = std::remove_if(s.begin(), s.end(), ispunct);
-    size_t length = (size_t) std::max<long>(i - s.begin(), 0);
-    dylib_path->insert(3, s, 0, length);
+    std::transform(s.begin(), s.end(), s.begin(), [](auto c) {
+        if (c == '.')
+            return '/';
+        return char(tolower(c));
+    });
+    dylib_path->insert(15, s);
     return dylib_path;
 }
 
