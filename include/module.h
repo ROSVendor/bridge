@@ -27,6 +27,8 @@ ret_state get_entity(void **);
 
 /**
  * entity和名称被独立链接到一个自定义的段里
+ * 这意味着Entity的name字段【不需要】被定义
+ * 反正定义了也会被覆盖...
  * TODO 布局模块的结构
  */
 #define SEPSEC(x)  __attribute__((section(x)))
@@ -40,7 +42,14 @@ ret_state get_entity(void **);
     ret_state get_entity(void ** addrp) { \
         *addrp = &entity;                 \
         return ES_NORMAL;                 \
-    } \
+    };                                    \
+    const size_t module_entity_size SEPSEC("bridge,entitysize") = sizeof(entity)
+
+#define MODULE_CONSTRUCTOR \
+    void module_constructor##__LINE__() __attribute__((constructor))
+
+#define MODULE_FINALIZER \
+    void module_finalizer##__LINE__() __attribute__((destructor))
 
 #ifdef __cplusplus
 }
