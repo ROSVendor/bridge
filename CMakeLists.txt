@@ -1,11 +1,12 @@
 cmake_minimum_required(VERSION 3.2)
 project(bridge)
 
-set(CMAKE_C_FLAGS "${CMAKE_C_FLAGS} -std=c11 -Wall -g")
+set(CMAKE_C_FLAGS "${CMAKE_C_FLAGS}   -std=c11   -Wall -g")
+set(CMAKE_CPP_FLAGS "${CMAKE_C_FLAGS} -std=c++14 -Wall -g")
 include_directories(.)
 
 # 核心模块的默认实现
-add_library(bridgedefault SHARED lib/_logger.c lib/_error.c lib/_memory.c lib/_io.c lib/_modloader.c)
+add_library(bridgedefault SHARED lib/_logger.c lib/_error.c lib/_memory.c lib/_io.c lib/_modloader.cpp)
 
 # Bridge
 add_library(bridge        SHARED lib/bridge.c)
