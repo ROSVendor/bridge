@@ -10,6 +10,7 @@
 
 typedef struct {
     ret_state (*require)(void **, const char *);
+    ret_state (*replace)(void **, const char *, const char *);
     ret_state (*remove)(const void *);
 } ModLoader;
 
