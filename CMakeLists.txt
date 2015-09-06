@@ -6,10 +6,10 @@ set(CMAKE_CPP_FLAGS "${CMAKE_C_FLAGS} -std=c++14 -Wall -g")
 include_directories(.)
 
 # 核心模块的默认实现
-add_library(bridgedefault SHARED lib/_logger.c lib/_error.c lib/_memory.c lib/_io.c lib/_modloader.cpp)
+add_library(bridgedefault lib/_logger.c lib/_error.c lib/_memory.c lib/_io.c lib/_modloader.cpp)
 
 # Bridge
-add_library(bridge        SHARED lib/bridge.c)
+add_library(bridge        lib/bridge.c)
 target_link_libraries(bridge bridgedefault)
 
 # Bridge.Error
