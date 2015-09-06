@@ -5,6 +5,7 @@
 #ifndef BRIDGE_MODULE_H
 #define BRIDGE_MODULE_H
 
+#include <stddef.h>
 #include <include/entity.h>
 #include <include/error.h>
 #include <include/macro.h>
@@ -23,7 +24,7 @@ enum InnerModuleType {
 /**
  * Bridge.ModLoader用于获取模块的主要接口
  */
-ret_state get_entity(void **);
+ret_state entity_getter(void **);
 
 /**
  * entity和名称被独立链接到一个自定义的段里
@@ -39,17 +40,17 @@ ret_state get_entity(void **);
     type SEPSEC("bridge,module") entity
 
 #define MODULE_ENTITY_GETTER(entity) \
-    ret_state get_entity(void ** addrp) { \
+    ret_state entity_getter(void ** addrp) { \
         *addrp = &entity;                 \
         return ES_NORMAL;                 \
     };                                    \
     const size_t module_entity_size SEPSEC("bridge,entitysize") = sizeof(entity)
 
 #define MODULE_CONSTRUCTOR \
-    void module_constructor##__LINE__() __attribute__((constructor))
+    static void module_constructor##__LINE__() __attribute__((constructor))
 
 #define MODULE_FINALIZER \
-    void module_finalizer##__LINE__() __attribute__((destructor))
+    static void module_finalizer##__LINE__() __attribute__((destructor))
 
 #ifdef __cplusplus
 }
