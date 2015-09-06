@@ -3,9 +3,9 @@
  * 仅仅是对默认实现的一层封装
  */
 
-#include <include/module.h>
-#include <include/error.h>
-#include <include/_error.h>
+#include <bridge/module.h>
+#include <bridge/error.h>
+#include <bridge/_error.h>
 
 MODULE_NAME("Bridge.Error");
 MODULE_ENTITY(ModError, module) = {

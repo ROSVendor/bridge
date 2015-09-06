@@ -4,8 +4,8 @@
 #ifndef BRIDGE_MEMORY_STATIC_H
 #define BRIDGE_MEMORY_STATIC_H
 
-#include <include/error.h>
-#include <include/macro.h>
+#include <bridge/error.h>
+#include <bridge/macro.h>
 
 #ifdef __cplusplus
 extern "C" {

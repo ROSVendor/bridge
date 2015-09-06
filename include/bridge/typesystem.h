@@ -5,7 +5,7 @@
 #define BRIDGE_TYPESYSTEM_H
 
 #include <stdbool.h>
-#include <include/language.h>
+#include <bridge/language.h>
 
 #ifdef __cplusplus
 extern "C" {

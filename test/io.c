@@ -3,8 +3,8 @@
  */
 
 #include <stdio.h>
-#include <include/bridge.h>
-#include <include/_io.h>
+#include <bridge/bridge.h>
+#include <bridge/_io.h>
 
 int main(int args, char *argv[]) {
     char buffer[24] = {};

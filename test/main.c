@@ -4,7 +4,7 @@
  */
 
 #include <stdio.h>
-#include <include/bridge.h>
+#include <bridge/bridge.h>
 
 int main(int args, char *argv[]) {
     Bridge bridge;

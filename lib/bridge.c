@@ -1,9 +1,9 @@
 /**
  * libbridge的对外接口
  */
-#include <include/bridge.h>
-#include <include/_error.h>
-#include <include/_memory.h>
+#include <bridge/bridge.h>
+#include <bridge/_error.h>
+#include <bridge/_memory.h>
 #include <errno.h>
 
 static Bridge self;

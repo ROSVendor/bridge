@@ -2,11 +2,11 @@
  * Bridge.Logger的默认实现
  */
 
-#include <include/bridge.h>
+#include <bridge/bridge.h>
 
-#include <include/module.h>
-#include <include/logger.h>
-#include <include/_logger.h>
+#include <bridge/module.h>
+#include <bridge/logger.h>
+#include <bridge/_logger.h>
 
 MODULE_NAME("Bridge.Logger");
 MODULE_ENTITY(ModLogger, module) = {

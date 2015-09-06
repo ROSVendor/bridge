@@ -6,7 +6,7 @@
 #ifndef BRIDGE_ENTITY_H
 #define BRIDGE_ENTITY_H
 
-#include <include/entity.h>
+#include <bridge/entity.h>
 
 #ifdef __cplusplus
 extern "C" {

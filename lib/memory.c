@@ -3,9 +3,9 @@
  */
 
 
-#include <include/module.h>
-#include <include/memory.h>
-#include <include/_memory.h>
+#include <bridge/module.h>
+#include <bridge/memory.h>
+#include <bridge/_memory.h>
 
 MODULE_NAME("Bridge.Memory");
 MODULE_ENTITY(ModMemory, module) = {

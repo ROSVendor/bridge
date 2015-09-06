@@ -2,8 +2,8 @@
  * Bridge.Logger的测试程序
  */
 
-#include <include/module.h>
-#include <include/_logger.h>
+#include <bridge/module.h>
+#include <bridge/_logger.h>
 
 
 int main() {

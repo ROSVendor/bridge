@@ -6,9 +6,9 @@
 #define BRIDGE_MODULE_H
 
 #include <stddef.h>
-#include <include/entity.h>
-#include <include/error.h>
-#include <include/macro.h>
+#include <bridge/entity.h>
+#include <bridge/error.h>
+#include <bridge/macro.h>
 
 #ifdef __cplusplus
 extern "C" {

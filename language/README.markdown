@@ -5,7 +5,7 @@ Bridge项目中不同语言语言的兼容层的实现。
 以供Bridge在运行时加载调用。
 
 一个语言模块应该包含以下结构：
-+ `interface.c`或者`include/`
++ `interface.c`或者`bridge/`
 + `wrapper.c`或者`dwrapper/`
 + `typesystem.c`或者`typesystem/`
 

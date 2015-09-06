@@ -4,9 +4,9 @@
 #ifndef BRIDGE_PROTOTOL_H
 #define BRIDGE_PROTOTOL_H
 
-#include <include/language.h>
-#include <include/typesystem.h>
-#include <include/env.h>
+#include <bridge/language.h>
+#include <bridge/typesystem.h>
+#include <bridge/env.h>
 
 #ifdef __cplusplus
 extern "C" {

@@ -7,10 +7,10 @@
 #include <cstring>
 #include <cstdlib>
 #include <cctype>
-#include <include/module.h>
-#include <include/_modloader.h>
-#include <include/_error.h>
-#include <include/_io.h>
+#include <bridge/module.h>
+#include <bridge/_modloader.h>
+#include <bridge/_error.h>
+#include <bridge/_io.h>
 
 #include <map>
 #include <string>

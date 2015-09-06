@@ -1,8 +1,8 @@
 #ifndef BRIDGE_LANGUAGE_H
 #define BRIDGE_LANGUAGE_H
 
-#include <include/entity.h>
-#include <include/typesystem.h>
+#include <bridge/entity.h>
+#include <bridge/typesystem.h>
 
 #ifdef __cplusplus
 extern "C" {

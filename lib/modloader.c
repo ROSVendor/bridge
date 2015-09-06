@@ -5,8 +5,8 @@
  * TODO: 提供可配置的Bridge Module Loader
  */
 
-#include <include/_modloader.h>
-#include <include/modloader.h>
+#include <bridge/_modloader.h>
+#include <bridge/modloader.h>
 
 MODULE_NAME("Bridge.ModLoader");
 MODULE_ENTITY(ModLoader, module) = {

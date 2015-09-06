@@ -4,10 +4,10 @@
 
 #include <stdio.h>
 #include <unistd.h>
-#include <include/bridge.h>
-#include <include/_logger.h>
-#include <include/_io.h>
-#include <include/_error.h>
+#include <bridge/bridge.h>
+#include <bridge/_logger.h>
+#include <bridge/_io.h>
+#include <bridge/_error.h>
 
 static int fd_out = STDOUT_FILENO;
 static int fd_err = STDERR_FILENO;

@@ -7,13 +7,13 @@
 #include <stdbool.h>
 #include <stddef.h>
 #include <iso646.h>
-#include <include/entity.h>
-#include <include/prototol.h>
-#include <include/language.h>
-#include <include/error.h>
-#include <include/macro.h>
-#include <include/module.h>
-#include <include/modloader.h>
+#include <bridge/entity.h>
+#include <bridge/prototol.h>
+#include <bridge/language.h>
+#include <bridge/error.h>
+#include <bridge/macro.h>
+#include <bridge/module.h>
+#include <bridge/modloader.h>
 
 #ifdef __cplusplus
 extern "C" {

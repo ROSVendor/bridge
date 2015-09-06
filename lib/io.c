@@ -4,9 +4,9 @@
 
 #include <fcntl.h>
 #include <unistd.h>
-#include <include/module.h>
-#include <include/_io.h>
-#include <include/io.h>
+#include <bridge/module.h>
+#include <bridge/_io.h>
+#include <bridge/io.h>
 
 MODULE_NAME("Bridge.IO");
 MODULE_ENTITY(ModIO, module) = {

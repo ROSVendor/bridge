@@ -6,8 +6,8 @@
 #include <fcntl.h>
 #include <stdarg.h>
 #include <stddef.h>
-#include <include/_io.h>
-#include <include/_error.h>
+#include <bridge/_io.h>
+#include <bridge/_error.h>
 
 //ssize_t (_bridge_io_raw_read) (int, void *, size_t) = read;
 //ssize_t (_bridge_io_raw_write)(int, const void *, size_t) = write;

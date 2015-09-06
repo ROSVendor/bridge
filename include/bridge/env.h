@@ -4,7 +4,7 @@
 #ifndef BRIDGE_ENV_H
 #define BRIDGE_ENV_H
 
-#include <include/entity.h>
+#include <bridge/entity.h>
 
 #ifdef __cplusplus
 extern "C" {

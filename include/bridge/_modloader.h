@@ -5,8 +5,8 @@
 #ifndef BRIDGE__MODLOADER_H
 #define BRIDGE__MODLOADER_H
 
-#include <include/error.h>
-#include <include/macro.h>
+#include <bridge/error.h>
+#include <bridge/macro.h>
 
 // TODO 实现一个ANSI C的版本
 // TODO 添加静态扫描以配置足够的内存空间

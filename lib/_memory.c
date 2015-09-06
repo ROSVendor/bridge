@@ -3,8 +3,8 @@
  */
 
 #include <stdlib.h>
-#include <include/bridge.h>
-#include <include/_memory.h>
+#include <bridge/bridge.h>
+#include <bridge/_memory.h>
 
 ret_state _bridge_memory_alloc(size_t size, void ** p) {
     void * addr = malloc(size);

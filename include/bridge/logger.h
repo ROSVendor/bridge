@@ -5,7 +5,7 @@
 #ifndef BRIDGE_LOGGER_H
 #define BRIDGE_LOGGER_H
 
-#include <include/module.h>
+#include <bridge/module.h>
 
 #ifdef __cplusplus
 extern "C" {

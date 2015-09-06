@@ -4,9 +4,9 @@
 #ifndef BRIDGE_MODLDR_H
 #define BRIDGE_MODLDR_H
 
-#include <include/module.h>
-#include <include/macro.h>
-#include <include/_modloader.h>
+#include <bridge/module.h>
+#include <bridge/macro.h>
+#include <bridge/_modloader.h>
 
 #ifdef __cplusplus
 extern "C" {

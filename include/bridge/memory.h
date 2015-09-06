@@ -4,7 +4,7 @@
 #ifndef BRIDGE_MEMORY_H
 #define BRIDGE_MEMORY_H
 
-#include <include/bridge.h>
+#include <bridge/bridge.h>
 
 #ifdef __cplusplus
 extern "C" {

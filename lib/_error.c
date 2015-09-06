@@ -6,9 +6,9 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
-#include <include/bridge.h>
-#include <include/config.h>
-#include <include/_error.h>
+#include <bridge/bridge.h>
+#include <bridge/config.h>
+#include <bridge/_error.h>
 
 char            info[MAX_ERROR_INFO_LEN]  = {};
 enum ErrorState state                     = ES_NORMAL;
