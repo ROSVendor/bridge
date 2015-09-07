@@ -1,6 +1,7 @@
 /**
  * 类型系统的关键定义
  */
+
 #ifndef BRIDGE_TYPESYSTEM_H
 #define BRIDGE_TYPESYSTEM_H
 
@@ -32,6 +33,7 @@ enum ExternType {
     CUSTOM_EXTERN_TYPE
 };
 
+
 /**
  * 定义类型的数据表示
  */
@@ -46,6 +48,14 @@ typedef struct {
     CType *type;
     void *pointer;
 } CValue;
+
+typedef void * (*from_rts_func)(void *);
+typedef void * (*to_rts_func)(void *);
+
+typedef struct {
+    from_rts_func from_rts;
+    to_rts_func   to_rts_;
+} TypeTransformer;
 
 #ifdef __cplusplus
 }

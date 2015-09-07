@@ -2,7 +2,7 @@ set(CMAKE_SHARED_LIBRARY_PREFIX "")
 set(CMAKE_SHARED_LIBRARY_SUFFIX .so)
 
 # Default
-add_library(default _logger.c _error.c _memory.c _io.c _modloader.cpp)
+add_library(default _logger.c _error.c _memory.c _io.c _modloader.cpp runtime.c _runtime.cpp)
 
 # Bridge.Core
 add_library(core bridge.c)
