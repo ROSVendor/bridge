@@ -1,3 +1,6 @@
+/**
+ * bridge模块的实现
+ */
 #include <python3.4/Python.h>
 #include <python3.4/structmember.h>
 #include "../include/bridge/language/PyBridge.h"

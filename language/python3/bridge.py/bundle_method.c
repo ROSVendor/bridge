@@ -1,6 +1,6 @@
-//
-// Created by NerdWizard on 15/9/7.
-//
+/**
+ * bridge.Bundle类方法实现
+ */
 
 #include <python3.4/Python.h>
 #include <python3.4/structmember.h>

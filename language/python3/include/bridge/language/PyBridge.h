@@ -1,5 +1,5 @@
 /**
- * 定义bridge.py的桥接对象
+ * 定义bridge.py的桥接对象bridge.Bundle
  */
 
 #ifndef BRIDGE_PYBRIDGE_H
@@ -13,8 +13,8 @@ extern "C" {
 
 typedef struct {
     PyObject_HEAD;
-    PyObject * callable;
-    PyObject * args;
+    PyObject * callable; /** 需要导出到BridgeRuntime的callable对象 */
+    PyObject * args;     /** callable对象的参数列表, [type] */
 } BundleType;
 
 extern PyTypeObject  bundle_type;
