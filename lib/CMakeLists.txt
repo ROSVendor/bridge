@@ -31,5 +31,5 @@ target_link_libraries(modloader default)
 
 # 安装
 install(TARGETS error memory logger io modloader
-    LIBRARY DESTINATION lib/bridge
-    ARCHIVE DESTINATION lib/bridge)
+    LIBRARY DESTINATION lib/bridge/bridge
+    ARCHIVE DESTINATION lib/bridge/bridge)
