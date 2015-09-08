@@ -11,11 +11,7 @@
 #include <bridge/_modloader.h>
 #include <bridge/_error.h>
 #include <bridge/_io.h>
-
-#include <map>
-#include <string>
-#include <algorithm>
-#include <functional>
+#include <bridge/_bridge.hpp>
 
 static void strmap(char * src, int (fn)(int)) {
     for (int i = 0; src[i]; ++i) {

@@ -49,6 +49,7 @@ typedef struct {
     void *pointer;
 } CValue;
 
+typedef void *(*cast_foreign_func)(CValue *);
 typedef void * (*from_rts_func)(void *);
 typedef void * (*to_rts_func)(void *);
 
@@ -56,6 +57,11 @@ typedef struct {
     from_rts_func from_rts;
     to_rts_func   to_rts_;
 } TypeTransformer;
+
+typedef struct {
+    TypeTransformer * (*get_transformer)(const char *);
+    void              (*set_transformer)(const char *, TypeTransformer *);
+} TypeSystem;
 
 #ifdef __cplusplus
 }

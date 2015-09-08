@@ -54,9 +54,6 @@ enum LanguageRuntime {
     CUSTOM_RUNTIME, // 其他需要解释器或者虚拟机运行的语言，如CLisp
 };
 
-typedef void *(*cast_foreign_func)(CValue *);
-
-typedef CValue *(*cast_native_func)();
 
 typedef struct {
     DERIVING_NAMED;
