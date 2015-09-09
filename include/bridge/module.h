@@ -46,12 +46,6 @@ ret_state entity_getter(void **);
     };                                    \
     const size_t module_entity_size SEPSEC("bridge,entitysize") = sizeof(entity)
 
-#define MODULE_CONSTRUCTOR \
-    static void module_constructor##__LINE__() __attribute__((constructor))
-
-#define MODULE_FINALIZER \
-    static void module_finalizer##__LINE__() __attribute__((destructor))
-
 #ifdef __cplusplus
 }
 #endif
