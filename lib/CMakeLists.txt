@@ -1,33 +1,36 @@
 set(CMAKE_SHARED_LIBRARY_PREFIX "")
 set(CMAKE_SHARED_LIBRARY_SUFFIX .so)
 
-# Default
-add_library(default _logger.c _error.c _memory.c _io.c _modloader.cpp runtime.c _runtime.cpp)
+# Bridge.Foundation
+add_library(foundation _logger.c _error.c _runtime.cpp _memory.c _io.c)
 
-# Bridge.Core
-add_library(core bridge.c)
-target_link_libraries(core default)
+# Bridge.Runtime
+add_library(runtime runtime.c)
+target_link_libraries(runtime foundation)
+
+# Bridge.ModLoader
+add_library(modloader modloader.c _modloader.cpp)
+target_link_libraries(modloader foundation)
 
 # Bridge.Error
 add_library(error   SHARED error.c)
-target_link_libraries(error default)
-
+target_link_libraries(error foundation)
 
 # Bridge.Memory
 add_library(memory  SHARED memory.c)
-target_link_libraries(memory default)
+target_link_libraries(memory foundation)
 
 # Bridge.Logger
 add_library(logger  SHARED logger.c)
-target_link_libraries(logger default)
+target_link_libraries(logger foundation)
 
 # Bridge.IO
 add_library(io SHARED io.c)
-target_link_libraries(io default)
+target_link_libraries(io foundation)
 
-# Bridge.ModLoader
-add_library(modloader modloader.c)
-target_link_libraries(modloader default)
+# Bridge - Exposed
+add_library(core bridge.c)
+target_link_libraries(core foundation modloader runtime)
 
 # 安装
 install(TARGETS error memory logger io modloader
