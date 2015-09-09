@@ -26,7 +26,7 @@ typedef struct {
 /**
  * 初始化Bridge系统
  */
-ret_state bridge_initialize(Bridge * bridge);
+ret_state bridge_initialize();
 
 /**
  * 清理Bridge系统
