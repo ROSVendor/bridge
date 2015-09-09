@@ -13,15 +13,17 @@ extern "C" {
 #endif
 
 typedef struct {
+    DERIVING_MODULE;
     ret_state (*require)(void **, const char *);
-
     ret_state (*replace)(void **, const char *, const char *);
-
     ret_state (*remove)(const void *);
 } ModLoader;
 
+#define REQUIRE_AS(type, name, mod) \
+    _bridge_modloader_require((void**)&name, mod)
+
 #define REQUIRE(type, name, mod) \
-    type * name; _bridge_modloader_require((void**)&name, mod)
+    type * name; REQUIRE_AS(type, name, mod)
 
 #ifdef __cplusplus
 }
