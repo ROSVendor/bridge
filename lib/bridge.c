@@ -4,6 +4,7 @@
 #include <bridge/bridge.h>
 #include <bridge/_error.h>
 #include <bridge/_memory.h>
+#include <bridge/_runtime.h>
 #include <errno.h>
 
 static Bridge self;
@@ -12,10 +13,10 @@ static bool   initialized = false;
 /**
  * 初始化Bridge系统
  */
-ret_state bridge_initialize(Bridge * bridge) {
+ret_state bridge_initialize() {
     if (!initialized) {
-//        errno = EPERM;
-        _bridge_error_fatal_here("Bridge has been initialized.");
+        _bridge_rts_initialize();
+        _bridge_modloader_initialize();
     }
     return ES_NORMAL;
 }
@@ -26,6 +27,8 @@ ret_state bridge_initialize(Bridge * bridge) {
 ret_state bridge_finalize() {
     if (initialized) {
         _bridge_memory_free(&self);
+        _bridge_modloader_finialize();
+        _bridge_rts_finalize();
     }
     return ES_NORMAL;
 }
