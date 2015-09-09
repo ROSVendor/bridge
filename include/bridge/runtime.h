@@ -16,12 +16,13 @@ typedef void * (query_func)(void *, const char *);
 typedef void * (set_func)  (void *, const char *, void *);
 
 typedef struct {
+    DERIVING_MODULE;
     void       * (*get_domain)(const char *);
+    void         (*release_domain)(const char *);
     ModLoader  * (*get_module_loader)();
     TypeSystem * (*get_type_system)();
 } BridgeRTS;
 
-BridgeRTS * get_runtime();
 
 #ifdef __cplusplus
 }
