@@ -22,7 +22,7 @@ enum LogLevel {
 };
 
 typedef struct {
-    DERIVING_NAMED;
+    DERIVING_MODULE;
     ret_state (*verbose)(const char *, const char *);
     ret_state (*info)   (const char *, const char *);
     ret_state (*warning)(const char *, const char *);

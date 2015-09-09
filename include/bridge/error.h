@@ -17,7 +17,7 @@ enum ErrorState {
 };
 
 typedef struct {
-    DERIVING_NAMED;
+    DERIVING_MODULE;
     enum ErrorState (*latest_state)();
     const char *    (*latest_info)();
     void            (*set_state)(enum ErrorState);

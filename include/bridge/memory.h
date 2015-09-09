@@ -11,7 +11,7 @@ extern "C" {
 #endif
 
 typedef struct {
-    DERIVING_NAMED;
+    DERIVING_MODULE;
     ret_state (*alloc)(size_t, void **);
     ret_state (*free)(void *);
 } ModMemory;
